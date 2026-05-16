@@ -1,3 +1,5 @@
-models/
+models/random_forest.pkl
+models/decision_tree.pkl
+models/knn.pkl
 .venv/
 __pycache__/
