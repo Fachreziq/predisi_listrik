@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Prediksi</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📊 Hasil Prediksi</h1>
+
+    <div class="result-box">
+
+        <h2>
+            {{ prediction }} kW
+        </h2>
+
+    </div>
+
+    <canvas id="myChart"></canvas>
+
+    <a href="/" class="back-btn">
+        Kembali
+    </a>
+
+</div>
+
+<script>
+
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+    type: 'bar',
+
+    data: {
+        labels: ['Prediksi'],
+
+        datasets: [{
+            label: 'Konsumsi Listrik',
+            data: [Number("{{ prediction }}")],
+            borderWidth: 2
+        }]
+    },
+
+    options: {
+        responsive: true
+    }
+});
+
+</script>
+
+</body>
+</html>

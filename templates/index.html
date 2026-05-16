@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Konsumsi Listrik</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>⚡ Prediksi Konsumsi Listrik</h1>
+
+    <p>
+        Sistem machine learning untuk memprediksi konsumsi listrik rumah tangga.
+    </p>
+
+    <form action="/predict" method="POST">
+
+        <input type="number" step="any" name="voltage" placeholder="Voltage" required>
+
+        <input type="number" step="any" name="intensity" placeholder="Global Intensity" required>
+
+        <input type="number" step="any" name="sub1" placeholder="Sub Metering 1" required>
+
+        <input type="number" step="any" name="sub2" placeholder="Sub Metering 2" required>
+
+        <input type="number" step="any" name="sub3" placeholder="Sub Metering 3" required>
+
+        <button type="submit">
+            Prediksi
+        </button>
+
+    </form>
+
+    <a href="/about" class="about-btn">
+        Tentang Project
+    </a>
+
+</div>
+
+</body>
+</html>
